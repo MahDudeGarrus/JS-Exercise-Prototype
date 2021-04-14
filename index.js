@@ -80,10 +80,23 @@ function Airplane(name) {
     this.odometer = 0
   }
   Car.prototype.fill = function(gallons){
-    this.tank += gallons;
+    return this.tank += gallons;
+  }
+  Car.prototype.drive = function(distance, milesPerGallon){
+    let gallonsUsed = distance/milesPerGallon;
+    this.odometer += distance;
+    this.tank -= gallonsUsed;
+    if (this.tank === 0){
+      return `I ran out of fuel at ${distance} miles!`
+    }    
+    return `${this.odometer} / ${this.tank}`;
   }
   const FilledUpCar = new Car('Lexus', 32);
-  console.log(FilledUpCar)
+  console.log(FilledUpCar.fill(10));
+  console.log(FilledUpCar.drive(320, 32));
+
+
+
   
   /*
     TASK 3
@@ -100,15 +113,15 @@ function Airplane(name) {
  Baby.prototype = Object.create(Person.prototype)
 
  Baby.prototype.play = function (){
-    return  `Playing with ${this.favoriteToy}`
+    return `Playing with ${this.favoriteToy}`
  }
 
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. 
-    2. 
-    3. 
+    1. Global Binding - When 'this' is sitting in the global scope, 'this' will not be defined or pointing to specific object and will point to the window.
+    2. Implicit Binding - When 'this' is invoked inside of an object or constructor, it will imply that 'this' is referring to the object it is inside of.
+    3. New Binding - When 'this' is invoked inside of the object, 'this' will point to 
     4. 
   */
   
