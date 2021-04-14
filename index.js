@@ -121,8 +121,8 @@ function Airplane(name) {
     In your own words explain the four principles for the "this" keyword below:
     1. Global Binding - When 'this' is sitting in the global scope, 'this' will not be defined or pointing to specific object and will point to the window.
     2. Implicit Binding - When 'this' is invoked inside of an object or constructor, it will imply that 'this' is referring to the object it is inside of.
-    3. New Binding - When 'this' is invoked inside of the object, 'this' will point to 
-    4. 
+    3. New Binding - When 'this' is invoked inside of the object, 'this' will point to the new object.
+    4. Explicit Binding - we an change the constructor using .call and .apply.
   */
   
   
